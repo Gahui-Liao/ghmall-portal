@@ -37,6 +37,7 @@
     </div>
   </el-header>
   <el-main>
+    <!-- 显示的主要内容 -->
     <router-view></router-view>
   </el-main>
   <el-footer>
