@@ -1,29 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Ghmall from '@/components/ghmall'
-import Recommend from '@/components/recommend'
+import Index from '@/pages/index'
+import Recommend from '@/pages/recommend'
+import Detail from '@/pages/detail'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/ghmall',
-      name: 'ghmall',
-      // 默认跳转到推荐，实现默认页面
-      redirect: '/recommend',
-      component: Ghmall,
+      path: '/index',
+      name: 'index',
+      component: Index,
       children: [
         {
           path: '/recommend',
           name: 'recommend',
           component: Recommend
+        },
+        {
+          path: '/detail',
+          name: 'detail',
+          component: Detail
         }
       ]
     }
