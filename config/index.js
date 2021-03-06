@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // 解决跨域问题
+    proxyTable: {
+      '/ghmall': { //定义的代理名
+        target: 'http://127.0.0.1:8118/ghmall', //接口地址
+        changeOrigin: true,
+        pathRewrite: {
+          '^/ghmall': '/'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

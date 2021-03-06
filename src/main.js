@@ -7,8 +7,9 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-// import GoodsCard from './components/goodsCard'
-// Vue.component(GoodsCard.name, GoodsCard)
+import {post, get} from './http/axios'
+Vue.prototype.$get = get
+Vue.prototype.$post = post
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

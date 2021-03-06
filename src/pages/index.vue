@@ -1,50 +1,49 @@
 <template>
   <el-container>
     <el-header>
-      <div class="logo">
-        <div class="txt">GHMALL</div>
-      </div>
-      <div class="search">
-        <el-input
-          placeholder="请输入内容"
-          v-model="searchInput"
-        >
-          <el-button
-            slot="append"
-            icon="el-icon-search"
-          ></el-button>
-        </el-input>
-      </div>
-      <div class="item">
-        <div class="cart">
-          <!-- <div class="icon"><i class="el-icon-shopping-cart-2"></i></div> -->
-          <el-badge :value="0">
-            <div class="icon"><i class="el-icon-shopping-cart-2"></i></div>
-          </el-badge>
-        </div>
-      </div>
-      <div class="auth">
-        <div v-if="hasLogin == 0">
-          <div class="avatar">
-            <el-avatar icon="el-icon-user-solid"></el-avatar>
+      <div class="header">
+        <div class="li">
+          <div class="logo">
+            GHMALL
           </div>
-          <div class="login">登录</div>
-        </div>
-        <div v-else-if="hasLogin == 1">
-          <div class="avatar">
-            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+          <div class="search">
+            <el-input
+              placeholder="请输入内容"
+              v-model="searchInput"
+            >
+              <el-button
+                slot="append"
+                icon="el-icon-search"
+              ></el-button>
+            </el-input>
           </div>
-          <div class="mine">
-            <el-dropdown>
-              <span class="el-dropdown-link">
-                XXXX昵称<i class="el-icon-arrow-down el-icon--right"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>我的订单</el-dropdown-item>
-                <el-dropdown-item>账号设置</el-dropdown-item>
-                <el-dropdown-item>退出登录</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
+          <div class="auth">
+            <div v-if="hasLogin == 0">
+              <div class="avatar">
+                <el-avatar icon="el-icon-user-solid"></el-avatar>
+              </div>
+              <div class="login">请登录</div>
+            </div>
+            <div v-else-if="hasLogin == 1">
+              <div class="avatar">
+                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+              </div>
+              <div class="mine">
+                <el-dropdown>
+                  <div class="text">
+                    <span class="el-dropdown-link">
+                      XXXX昵称<i class="el-icon-arrow-down el-icon--right"></i>
+                    </span>
+                  </div>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>购物车</el-dropdown-item>
+                    <el-dropdown-item>我的订单</el-dropdown-item>
+                    <el-dropdown-item>账号设置</el-dropdown-item>
+                    <el-dropdown-item>退出登录</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -73,55 +72,49 @@ export default {
 </script>
 
 <style scoped>
-.logo {
-  display: inline-block;
-  vertical-align: middle;
-  width: 15%;
+.header {
+  text-align: center;
+  width: 100%;
 }
-.logo .txt {
-  font-size: 40px;
+.header .li {
+  overflow: hidden;
+  display: inline-block;
+}
+.logo {
+  float: left;
+  font-size: 30px;
+  font-weight: bolder;
   color: #409eff;
+  width: fit-content;
 }
 .search {
-  display: inline-block;
-  vertical-align: middle;
-  width: 45%;
-}
-.item {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 5px;
-  width: 20%;
-}
-
-.item .cart {
-  display: inline-block;
-  border-radius: 2px;
-}
-.item .cart .icon {
-  font-size: 28px;
-  color: #f56c6c;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 500px;
 }
 .auth {
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
+  width: fit-content;
 }
+
 .auth .avatar {
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
+  margin-right: 10px;
 }
 .auth .login {
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
+  margin-top: 10px;
 }
 .auth .mine {
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
+  margin-top: 10px;
 }
+
 .el-dropdown-link {
-    cursor: pointer;
-    color: #409EFF;
-  }
+  cursor: pointer;
+  color: #409eff;
+}
 .el-icon-arrow-down {
   font-size: 12px;
 }

@@ -53,7 +53,7 @@ export default {
   name: 'recommend',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      goodsId: this.$route.query.index,
       name: '测试商品',
       info: '房东房客还是分开就分开就很烦返回数据粉红色客还是分开就分开就很烦返回数据粉红色客还是分开就分开就很烦返回数据粉红色客还是分开就分开就很烦返回数据粉红色空间划分伤口缝合伤口返回顺丰航',
       finalPrice: '66.66',
@@ -67,6 +67,15 @@ export default {
         'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg'
       ]
     }
+  },
+  methods: {
+    init () {
+      console.log(this.$route.query.goodsId)
+    }
+  },
+  mounted () {
+    console.log('详情页面初始化')
+    this.init()
   }
 }
 </script>
