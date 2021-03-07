@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="order">
     <div class="header">
       <i class="el-icon-s-order"></i>
       我的订单
@@ -59,3 +59,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.order {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+</style>

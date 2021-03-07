@@ -13,7 +13,6 @@ axios.interceptors.request.use(
     const token = window.localStorage.getItem('gh-token')// token存储在浏览器
     if (token) {
       config.headers.token = token
-      console.log(config.headers.token)
     }
     return config
   },

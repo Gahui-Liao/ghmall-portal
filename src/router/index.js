@@ -5,6 +5,8 @@ import Recommend from '@/pages/recommend'
 import Detail from '@/pages/detail'
 import Login from '@/pages/login'
 import Order from '@/pages/order'
+import Cart from '@/pages/cart'
+import Gherror from '@/pages/error'
 
 Vue.use(Router)
 
@@ -29,6 +31,11 @@ export default new Router({
           path: '/order',
           name: 'order',
           component: Order
+        },
+        {
+          path: '/cart',
+          name: 'cart',
+          component: Cart
         }
       ]
     },
@@ -36,6 +43,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: Gherror
     }
   ]
 })

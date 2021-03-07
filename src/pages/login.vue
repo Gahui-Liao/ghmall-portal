@@ -36,7 +36,7 @@ export default {
   methods: {
     login () {
       console.log('login now')
-      this.$get('/login', {}).then((response) => {
+      this.$get(this.$URL.login, {}).then((response) => {
         console.log(response)
         return response.data
       }).catch((err) => { console.log(err) })

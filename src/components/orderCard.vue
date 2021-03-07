@@ -3,9 +3,7 @@
     <el-card>
       <div slot="header">
         <span>订单编号：{{orderCode}}</span>
-        <div
-          style="font-size: 10px;float: right; padding: 3px 0"
-        >下单时间：{{createTime}}</div>
+        <div style="font-size: 10px;float: right; padding: 3px 0">下单时间：{{createTime}}</div>
       </div>
       <el-table :data="orderItems">
         <el-table-column
@@ -76,8 +74,6 @@ export default {
 </script>
 <style scoped>
 .order-card {
-  padding-left: 20%;
-  padding-right: 20%;
   margin-top: 10px;
 }
 .goods .icon {
@@ -93,6 +89,6 @@ export default {
 }
 .footer .totalPrice {
   font-size: 30px;
-  color: #409EFF;
+  color: #409eff;
 }
 </style>
