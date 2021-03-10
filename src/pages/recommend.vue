@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <div @click="toDetail">
+    <div class="recommend" @click="toDetail">
       <goods-card :goods="goods"></goods-card>
     </div>
   </el-container>
@@ -34,4 +34,8 @@ export default {
 }
 </script>
 <style scoped>
+.recommend {
+  padding-left: 20%;
+  padding-right: 20%;
+}
 </style>
