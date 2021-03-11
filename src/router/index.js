@@ -13,9 +13,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      // 默认跳转到推荐页面
+      redirect: '/recommend'
+    },
+    {
       path: '/index',
       name: 'index',
       component: Index,
+      redirect: '/recommend',
       children: [
         {
           path: '/recommend',

@@ -29,17 +29,17 @@
                 <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
               </div>
               <div class="mine">
-                <el-dropdown>
+                <el-dropdown @command="handleDropdownCommand">
                   <div class="text">
                     <span class="el-dropdown-link">
                       XXXX昵称<i class="el-icon-arrow-down el-icon--right"></i>
                     </span>
                   </div>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>购物车</el-dropdown-item>
-                    <el-dropdown-item>我的订单</el-dropdown-item>
-                    <el-dropdown-item>账号设置</el-dropdown-item>
-                    <el-dropdown-item>退出登录</el-dropdown-item>
+                    <el-dropdown-item command="cart">购物车</el-dropdown-item>
+                    <el-dropdown-item command="order">我的订单</el-dropdown-item>
+                    <el-dropdown-item command="account">账号设置</el-dropdown-item>
+                    <el-dropdown-item command="logout">退出登录</el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
               </div>
@@ -66,6 +66,12 @@ export default {
       searchInput: '',
       hasLogin: 1,
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    // 处理下拉菜单逻辑
+    handleDropdownCommand (command) {
+      this.$router.push({path: '/' + command, query: {accountId: 1}})
     }
   }
 }
