@@ -53,6 +53,23 @@
       <router-view></router-view>
     </el-main>
     <el-footer>
+      <div class="footer">
+        <div class="li">
+          <div>
+            <span>关于此站</span>
+            <el-divider direction="vertical"></el-divider>
+            <span>友情链接</span>
+            <el-divider direction="vertical"></el-divider>
+            <span>联系作者</span>
+          </div>
+          <div>
+            <span>以前觉得上班很累，现在发现做自己不喜欢的事才是最累的~</span>
+          </div>
+          <div>
+            <span>©2021-forever 迪迦不相信光</span>
+          </div>
+        </div>
+      </div>
     </el-footer>
   </el-container>
 </template>
@@ -123,5 +140,16 @@ export default {
 }
 .el-icon-arrow-down {
   font-size: 12px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  color: #909399;
+  font-size: 13px;
+}
+.footer .li {
+  overflow: hidden;
+  display: inline-block;
 }
 </style>

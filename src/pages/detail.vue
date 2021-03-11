@@ -19,6 +19,7 @@
           <el-image
             :src="item"
             fit="fill"
+            style="height: 250px"
             :preview-src-list="pictures"
           ></el-image>
         </el-carousel-item>

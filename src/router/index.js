@@ -54,6 +54,11 @@ export default new Router({
       path: '/error',
       name: 'error',
       component: Gherror
+    },
+    // 找不到页面跳转至错误页面
+    {
+      path: '*',
+      redirect: '/error'
     }
   ]
 })
