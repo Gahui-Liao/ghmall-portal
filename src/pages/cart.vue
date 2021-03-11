@@ -8,7 +8,7 @@
       <div class="items">
         <el-table
           ref="multipleTable"
-          :data="tableData"
+          :data="carts"
           tooltip-effect="dark"
           style="width: 100%"
           @selection-change="handleSelectionChange"
@@ -51,7 +51,7 @@
           >
             <template slot-scope="scope">
               <el-button
-                @click="deleteRow(scope.$index, tableData)"
+                @click="deleteRow(scope.$index, carts)"
                 type="text"
                 size="small"
               >
@@ -77,35 +77,18 @@ export default {
   name: 'cart',
   data () {
     return {
-      tableData: [{
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-08',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-06',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-07',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }],
+      carts: [
+        {
+          goods: {
+            goodsId: 1001,
+            goodsIcon: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+            goodsName: '测试商品'
+          },
+          price: 0.01,
+          goodsCount: 3
+        }
+      ],
+      totalPrice: 99.99,
       multipleSelection: []
     }
   },
@@ -139,5 +122,12 @@ export default {
   float: left;
   margin-top: 10px;
   margin-left: 5px;
+}
+.footer {
+  padding-top: 10px;
+}
+.footer .totalPrice {
+  font-size: 30px;
+  color: #409eff;
 }
 </style>
