@@ -68,6 +68,9 @@
           class="totalPrice"
         >{{totalPrice}}元</div>
       </div>
+      <div class="btn">
+        <el-button type="primary" class="submit">立即结算</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -86,25 +89,41 @@ export default {
           },
           price: 0.01,
           goodsCount: 3
+        },
+        {
+          goods: {
+            goodsId: 1002,
+            goodsIcon: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
+            goodsName: '测试商品'
+          },
+          price: 0.02,
+          goodsCount: 6
         }
       ],
-      totalPrice: 99.99,
+      totalPrice: 0,
       multipleSelection: []
     }
   },
-
-  methods: {
-    toggleSelection (rows) {
-      if (rows) {
-        rows.forEach(row => {
-          this.$refs.multipleTable.toggleRowSelection(row)
-        })
-      } else {
-        this.$refs.multipleTable.clearSelection()
+  // 监听数据变化，这里主要是监听选中
+  watch: {
+    multipleSelection (val) {
+      var temp = 0
+      for (var row of this.multipleSelection) {
+        console.log(row)
+        temp += row.price * row.goodsCount * 100
       }
-    },
+      this.totalPrice = temp / 100
+    }
+  },
+  methods: {
     handleSelectionChange (val) {
+      // 这里的val其实就是选中了的数据
       this.multipleSelection = val
+    },
+    // 移除某行数据
+    deleteRow (index, carts) {
+      console.log('删除第' + index + '行数据')
+      carts.splice(index, 1)
     }
   }
 }
@@ -129,5 +148,17 @@ export default {
 .footer .totalPrice {
   font-size: 30px;
   color: #409eff;
+}
+
+.btn {
+  margin-top: 30px;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+}
+.btn .submit {
+  width: 90%;
+  font-size: 15px;
+  font-weight: bolder;
 }
 </style>

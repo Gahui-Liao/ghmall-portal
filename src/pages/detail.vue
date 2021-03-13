@@ -1,10 +1,6 @@
 <template>
   <div class="detail">
     <div class="carousel">
-      <div class="title">
-        <i class="el-icon-document"></i>
-        {{name}}
-      </div>
       <!-- 使用走马灯展示商品图片 -->
       <el-carousel
         :interval="4000"
@@ -26,10 +22,13 @@
       </el-carousel>
     </div>
     <div class="content">
-      <el-tag
-        class="tag"
-        size="small"
-      >测试标签</el-tag>
+      <div class="title">
+        <el-tag
+          class="tag"
+          size="small"
+        >测试标签</el-tag>
+        {{name}}
+      </div>
       <div class="info">
         {{info}}
       </div>
@@ -100,24 +99,18 @@ export default {
   padding-right: 20%;
 }
 
-.detail .title {
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  background: rgb(242, 247, 252);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
-
 .detail .content {
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
-.detail .content .tag {
-  font-size: 15px;
+.detail .content .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.detail .content .title .tag {
   font-weight: bold;
 }
 .detail .content .info {
